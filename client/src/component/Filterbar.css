@@ -1,0 +1,40 @@
+.filterbar__container {
+  background-color: white;
+  border-radius: 45px;
+  box-shadow: gray 2px 2px 2px;
+  margin: 15px;
+}
+.filterbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.dropdown {
+  background: #fffffc;
+  border: solid;
+  border-radius: 15px;
+  position: relative;
+  height: auto;
+  font-size: 20px;
+  padding: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: gray 2px 2px 2px;
+  transition: 500ms ease all;
+}
+
+.option {
+  margin: 15px;
+}
+
+.dropdown:hover {
+  background: #fdffb6;
+  box-shadow: gray 6px 6px 6px;
+}
+
+.tempList {
+  display: inline-block;
+}

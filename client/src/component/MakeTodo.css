@@ -1,0 +1,108 @@
+.Container {
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: gray 2px 2px 2px;
+  padding: 30px;
+  margin: 15px;
+  height: 210px;
+}
+
+.fa-pencil-alt {
+  font-size: 30px;
+  margin: 8px;
+  margin-top: 2px;
+}
+
+.MakeTodo_input {
+  display: flex;
+  align-items: center;
+}
+
+.MakeTodo_title {
+  font-size: 18px;
+  width: 110px;
+}
+
+.fa-calendar-day {
+  font-size: 30px;
+  margin: 8px;
+  margin-top: 2px;
+  padding-left: 8px;
+}
+
+.MakeTodo_input__calendar {
+  margin-left: auto;
+  font-size: 100%;
+  max-width: 152px;
+  border: dashed 6px #bdb2ff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 5px 0 0;
+}
+
+.MakeTodo_input__calendar:focus {
+  display: none;
+}
+
+.MakeTodo_input__calendar:hover {
+  cursor: pointer;
+}
+
+.MakeTodo_input--message {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 28px 0;
+}
+
+.MakeTodo_input--submit {
+  background: #fffffc;
+  border: solid;
+  border-radius: 15px;
+  position: relative;
+  height: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  box-shadow: gray 2px 2px 2px;
+  width: 250px;
+  margin-left: 15px;
+}
+
+.MakeTodo_input--submit:hover {
+  color: #bdb2ff;
+  box-shadow: gray 6px 6px 6px;
+}
+
+.MakeTodo_input--submit:before,
+.MakeTodo_input--submit:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  background: #bdb2ff;
+  transition: ease all;
+}
+
+.MakeTodo_input--submit:hover:before,
+.MakeTodo_input--submit:hover:after {
+  width: 100%;
+  transition: ease all;
+}
+
+.MakeTodo_input--submit:active {
+  box-shadow: none;
+}
+
+.input_message {
+  font-size: 40px;
+  border: solid #bdb2ff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  height: 100%;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
+  padding: 8px 10px;
+}

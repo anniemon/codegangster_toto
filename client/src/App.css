@@ -7,31 +7,22 @@
 }
 
 :root {
-  --default-text-color: rgb(255, 255, 255);
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  --default-text-color: rgb(255, 255, 255);
 }
 
 main {
-  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  max-width: 800px;
+  min-width: 500px;
   padding: 25px;
   border-radius: 40px;
 }
 
-body {
-  margin: 50px;
-  border: solid white 5px;
-  border-radius: 45px;
-  display: flex;
-  justify-content: left;
-  min-height: 100vh;
-  padding: 20px;
-  box-shadow: gray 2px 2px 2px;
-}
-
-button,
-input {
-  font-size: 100%;
-  padding: 10px;
-  box-shadow: gray 2px 2px 2px;
-  margin: 5px;
+content {
+  display: inline-block;
+  max-width: 800px;
+  min-width: 500px;
+  border-radius: 40px;
+  padding: 25px;
 }

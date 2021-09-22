@@ -1,0 +1,58 @@
+.header--wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 15px;
+  border-radius: 40px;
+  box-shadow: gray 2px 2px 2px;
+  height: auto;
+}
+
+.fa-user-circle {
+  margin: 10px;
+  padding-left: 15px;
+  font-size: 3rem;
+}
+
+.span--Username {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.btn--logout {
+  background: #fffffc;
+  border: solid;
+  border-radius: 15px;
+  position: relative;
+  height: 35px;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  box-shadow: gray 2px 2px 2px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.btn--logout:hover {
+  background: #fdffb6;
+  box-shadow: gray 6px 6px 6px;
+}
+
+.btn--logout:before,
+.btn--logout:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  transition: ease all;
+}
+
+.btn--logout:hover:before,
+.btn--logout:hover:after {
+  width: 100%;
+  transition: ease all;
+}
+
+.btn--logout:active {
+  box-shadow: none;
+}

@@ -1,0 +1,61 @@
+.count_Container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 15px;
+  border-radius: 40px;
+  box-shadow: gray 2px 2px 2px;
+  height: auto;
+  flex-wrap: nowrap;
+}
+
+.btn--clearAll {
+  flex-wrap: nowrap;
+  background: #fffffc;
+  border: solid;
+  border-radius: 15px;
+  position: relative;
+  height: 35px;
+  padding: 1px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  box-shadow: gray 2px 2px 2px;
+  margin-left: auto;
+  margin-right: 30px;
+  min-width: 165px;
+  width: 200px;
+}
+
+.btn--clearAll:hover {
+  background: #fdffb6;
+  box-shadow: gray 6px 6px 6px;
+}
+
+.btn--clearAll:before,
+.btn--clearAll:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  transition: ease all;
+}
+
+.btn--clearAll:hover:before,
+.btn--clearAll:hover:after {
+  width: 100%;
+  transition: ease all;
+}
+
+.btn--clearAll:active {
+  box-shadow: none;
+}
+
+.span--remainTodos {
+  margin: 15px;
+  margin-left: 30px;
+  padding: 5px;
+  font-size: 30px;
+  text-shadow: gray 2px 2px 2px;
+  min-width: 200px;
+  width: 200px;
+}

@@ -22,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', controllers.get);
 app.post('/', controllers.post);
 
+app.post('/', controller.post);
 
 let server = app.listen(port, () => {
   console.log(`server running on ${port}`);

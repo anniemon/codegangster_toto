@@ -1,3 +1,4 @@
+
 const { User } = require('../models');
 const { todos } = require('../models');
 
@@ -19,5 +20,6 @@ module.exports = {
         // console.log((await fk.createUser()).toJSON());
         if(!result) return res.status(404).json('not found')
         res.status(200).json({message: 'created', data: result});
+
     }
 }
