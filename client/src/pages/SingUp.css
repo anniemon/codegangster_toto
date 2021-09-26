@@ -61,36 +61,8 @@
   margin-right: 6px;
 }
 
-.validation__check__complicatedPassword {
+.validation__check__msg {
   color: red;
   margin: 15px;
   margin-bottom: -10px;
-}
-
-.validation__check__wrongEmail {
-  color: red;
-  margin: 15px;
-  margin-bottom: -10px;
-}
-
-.validation__check__wrongPassword {
-  color: red;
-  margin: 15px;
-  margin-bottom: -10px;
-}
-
-.validation__check__matchIdPassword {
-  color: red;
-  margin: 15px;
-  margin-bottom: -10px;
-}
-
-.validation__check__notMatchPassword {
-  color: red;
-  margin: 15px;
-  margin-bottom: -10px;
-}
-
-.hide {
-  display: none;
 }
