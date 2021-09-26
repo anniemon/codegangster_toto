@@ -61,6 +61,7 @@
   margin-right: 6px;
 }
 
+<<<<<<< HEAD
 .validation__check__complicatedPassword {
   color: red;
   margin: 15px;
@@ -86,6 +87,9 @@
 }
 
 .validation__check__notMatchPassword {
+=======
+.validation__check__msg {
+>>>>>>> e195d956c23cb72324f68d8090e66637ba0b597d
   color: red;
   margin: 15px;
   margin-bottom: -10px;
