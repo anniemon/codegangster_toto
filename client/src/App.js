@@ -26,6 +26,9 @@ function App() {
           {!cookie ? (
             <main>
               <section className="features">
+                <Route exact path="/">
+                  <TodoList />
+                </Route>
                 <Route path="/login">
                   <Login loginHandler={loginHandler} />
                 </Route>
