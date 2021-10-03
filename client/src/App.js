@@ -1,43 +1,65 @@
-import { useState } from 'react';
-import Cookies from 'universal-cookie';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import TodoList from './pages/TodoList';
 import Login from './pages/Login';
 import SingUp from './pages/SingUp';
+import axios from 'axios';
 
 import './App.css';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-  const [accessToken, setAccessToken] = useState('');
+  const [userInfo, setUserInfo] = useState({});
 
-  const cookies = new Cookies();
-  const [cookie, setCookie] = useState(cookies.get('refreshToken'));
+  const issueTokens = (token) => {
+    axios
+      .get('https://localhost:4000/tokenrequest', {
+        headers: { authorization: `Bearer ${token}` },
+        withCredentials: true
+      })
+      .then((res) => {
+        setUserInfo(res.data.data.userInfo);
+        setIsLogin(true);
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    issueTokens();
+  }, []);
 
-  const issueAccessTokens = () => {};
+  const loginHandler = (token) => {
+    issueTokens(token.data);
+  };
 
-  const loginHandler = (token) => {};
+  const logoutHandler = () => {
+    axios
+      .get('https://localhost:4000/logout', { withCredentials: true })
+      .then((res) => {
+        setUserInfo({});
+        setIsLogin(false);
+      });
+  };
 
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          {!cookie ? (
+          {isLogin ? (
+            <Route exact path="/">
+              <TodoList userInfo={userInfo} logoutHandler={logoutHandler} />
+            </Route>
+          ) : (
             <main>
               <section className="features">
-                <Route path="/login">
-                  <Login loginHandler={loginHandler} />
+                <Route exact path="/">
+                  <Login loginHandler={loginHandler} setIsLogin={setIsLogin} />
                 </Route>
                 <Route path="/signup">
                   <SingUp />
                 </Route>
               </section>
             </main>
-          ) : (
-            <Route exact path="/">
-              <TodoList />
-            </Route>
           )}
         </Switch>
       </div>

@@ -9,31 +9,23 @@ import ContentTodo from '../component/ContentTodo';
 import Footer from '../Footer';
 import axios from 'axios';
 
-const TodoList = ({}) => {
-  const [isClear, setIsClear] = useState(false);
+const TodoList = ({ userInfo, logoutHandler }) => {
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {
-    axios.get('https://localhost:4000/todos').then((res) => setDatas(res.data));
+    axios
+      .post('https://localhost:4000/getTodos', { id: userInfo.id })
+      .then((res) => setDatas(res.data))
+      .catch((err) => console.log(err));
   }, []);
-
-  const handleClear = () => {
-    setIsClear(true);
-    setDatas([]);
-  };
 
   return (
     <React.Fragment>
       <div className="home__container">
-        <Header />
+        <Header userInfo={userInfo} logoutHandler={logoutHandler} />
         <Filterbar datas={datas} setDatas={setDatas} />
-        <MakeTodo datas={datas} setDatas={setDatas} />
-        <CountClear
-          datas={datas}
-          setDatas={setDatas}
-          isClear={isClear}
-          handleClear={handleClear}
-        />
+        <MakeTodo datas={datas} setDatas={setDatas} userInfo={userInfo} />
+        <CountClear datas={datas} setDatas={setDatas} />
         <div className="listPart">
           <ContentTodo datas={datas} setDatas={setDatas} />
         </div>
