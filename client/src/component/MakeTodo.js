@@ -11,23 +11,24 @@ import axios from 'axios';
 
 registerLocale('ko', ko);
 
-const MakeTodo = ({ datas, setDatas }) => {
+const MakeTodo = ({ datas, setDatas, userInfo }) => {
   const [message, setMessage] = useState('');
   const [startDate, setStartDate] = useState(new Date());
 
-  const today = new Date();
-  const dday = startDate;
-  const gap = dday - today.getTime();
-  const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
+  // const today = new Date();
+  // const dday = startDate;
+  // const gap = dday - today.getTime();
+  // const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
   const addTodoClick = (event) => {
     axios
       .post('https://localhost:4000/todos', {
-        userId: 'kimcoding',
+        userId: userInfo.userId,
         todo: message,
         d_day: startDate
       })
       .then((res) => setDatas([...datas, res.data.data]))
       .catch((err) => err);
+
     // const todo = {
     //   id: shortid(),
     //   d_day: result,

@@ -10,15 +10,17 @@ module.exports = {
   },
   sendRefreshToken: (res, refreshToken) => {
     res.cookie('refreshToken', refreshToken, {
+      sameSite: 'none',
+      secure: true,
       httpOnly: true
     });
   },
   sendAccessToken: (res, accessToken) => {
-    res.json({ data: { accessToken }, message: 'ok' });
+    res.json({ data: accessToken, message: 'ok' });
   },
-  resendAccessToken: (res, accessToken, data) => {
-    res.json({ data: { accessToken, userInfo: data }, message: 'ok' });
-  },
+  // resendAccessToken: (res, accessToken, data) => {
+  //   res.json({ data: { accessToken, userInfo: data }, message: 'ok' });
+  // },
   isAuthorized: (req) => {
     const authorization = req.headers['authorization'];
     if (!authorization) {

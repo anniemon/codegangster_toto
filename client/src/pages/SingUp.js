@@ -3,13 +3,16 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 import Footer from '../Footer';
 
 import './SingUp.css';
+import { useHistory } from 'react-router-dom';
 
 const SingUp = () => {
+  const history = useHistory();
+
   const [isVerified, setIsVerified] = useState(false);
 
   const {
@@ -17,24 +20,23 @@ const SingUp = () => {
     handleSubmit,
     formState: { errors },
     watch
-  } = useForm();
-
-  const [isErrors, setIsErrors] = useState(true);
-
-  useEffect(() => {
-    if (!Object.keys(errors).length) {
-      setIsErrors(false);
-    } else {
-      setIsErrors(true);
-    }
-  }, [errors]);
+  } = useForm({ mode: 'onChange' });
 
   const onSubmit = (data) => {
-    // console.log(data)
+    axios
+      .post('https://localhost:4000/signup', {
+        userId: data.userId,
+        password: data.password,
+        email: data.email
+      })
+      .then((res) => {
+        history.push('/');
+      })
+      .catch((err) => alert('중복된 ID 입니다.'));
   };
 
   const handleError = (e) => {
-    console.log(e.target.textContent);
+    console.log(errors);
   };
 
   useEffect(() => {
@@ -49,14 +51,15 @@ const SingUp = () => {
           <div className="loginTodolist__inputId">
             <i class="fas fa-user"></i>
             <input
+              onKeyUp={handleError}
               className="userId"
               type="text"
               placeholder="ID"
               name="userId"
               {...register('userId', {
-                pattern: /^[a-z0-9_-]{4,20}$/,
-                required: true
+                pattern: /^[a-z0-9_-]{4,20}$/
               })}
+              required
             />
           </div>
 
@@ -71,6 +74,15 @@ const SingUp = () => {
                 pattern: /(?=.*\d)(?=.*[a-zA-ZS]).{8,}/,
                 required: true
               })}
+              required
+              onInvalid={(e) => {
+                e.target.setCustomValidity(
+                  '비밀번호는 8글자 이상, 영문, 숫자 조합이어야 합니다.'
+                );
+              }}
+              onInput={(e) => {
+                e.target.setCustomValidity('');
+              }}
             />
           </div>
 
@@ -82,6 +94,13 @@ const SingUp = () => {
               type="password"
               placeholder="Verify Password"
               {...register('verifyPassword', { required: true })}
+              required
+              onInvalid={(e) => {
+                e.target.setCustomValidity('비밀번호가 일치하지 않습니다.');
+              }}
+              onInput={(e) => {
+                e.target.setCustomValidity('');
+              }}
             />
           </div>
 
@@ -104,7 +123,7 @@ const SingUp = () => {
             <div
               name="userId_err"
               className="validation__check__msg"
-              onChange={handleError}
+              onKeyUp={handleError}
             >
               * 아이디는 소문자, 숫자 4~20글자여야 합니다.
             </div>
@@ -140,23 +159,9 @@ const SingUp = () => {
           )}
 
           <div className="loginTodolist__BtnContainer">
-            {!isErrors ? (
-              <Link to="/login">
-                <button
-                  type="submit"
-                  onClick={() => {
-                    alert('회원가입이 완료되었습니다.');
-                  }}
-                  className="singUpBtn"
-                >
-                  Sign Up
-                </button>
-              </Link>
-            ) : (
-              <button type="submit" className="singUpBtn">
-                Sign Up
-              </button>
-            )}
+            <button type="submit" className="singUpBtn">
+              Sign Up
+            </button>
           </div>
         </div>
       </form>
@@ -166,5 +171,4 @@ const SingUp = () => {
     </section>
   );
 };
-
 export default SingUp;

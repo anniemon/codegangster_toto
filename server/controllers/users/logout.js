@@ -1,10 +1,4 @@
-const { User } = require('../../models');
-const crypto = require('crypto');
-
 module.exports = (req, res) => {
-  res
-    .cookie('refreshToken', '', {
-      httpOnly: true
-    })
-    .send('logout!');
+  // console.log('logout!!!!!!!!!!!!!!!!!!');
+  res.status(205).clearCookie('refreshToken').send('Logged out successfully');
 };
