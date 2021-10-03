@@ -61,12 +61,26 @@
   margin-right: 6px;
 }
 
+.singUpBtn {
+  font-family: 'AVENGEANCE HEROIC AVENGER AT';
+  flex-wrap: nowrap;
+  background: #ffc8dd;
+  border: solid;
+  position: relative;
+  border-radius: 10px;
+  height: 58px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  box-shadow: gray 2px 2px 2px;
+  width: 344px;
+  font-size: 28px;
+  letter-spacing: 3px;
+  padding-top: 8px;
+}
+
 .validation__check__msg {
   color: red;
   margin: 15px;
   margin-bottom: -10px;
-}
-
-.hide {
-  display: none;
 }

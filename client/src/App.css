@@ -10,6 +10,9 @@
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   --default-text-color: rgb(255, 255, 255);
   height: fit-content;
+  min-width: 500px;
+  min-height: 1000px;
+  max-height: fit-content;
 }
 
 main {
@@ -18,10 +21,6 @@ main {
   padding: 25px;
   padding-bottom: 0;
   border-radius: 40px;
-}
-
-section {
-  height: 1200px;
 }
 
 .listPart {

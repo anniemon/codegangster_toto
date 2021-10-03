@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
   );
 
   if (!checkUser)
-    res.status(401), json({ data: null, message: 'not registered' });
+    res.status(401).json({ data: null, message: 'not registered' });
   const hashPassword = crypto
     .createHash('sha512')
     .update(password + checkUser.salt)

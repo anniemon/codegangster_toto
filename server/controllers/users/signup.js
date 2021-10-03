@@ -11,10 +11,8 @@ module.exports = async (req, res) => {
     .createHash('sha512')
     .update(inputPassword + salt)
     .digest('hex');
-  const checkUser = await User.findOne({ where: { userId } }).catch((err) =>
-    res.json(err)
-  );
-  if (checkUser) res.status(403).json({ data: null, message: 'duplicated id' });
+  const checkUser = await User.findOne({ where: { userId } });
+  if (checkUser) res.status(403).send({ data: null, message: 'duplicated id' });
   else {
     const createUser = await User.create({
       userId: userId,

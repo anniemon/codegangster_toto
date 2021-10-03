@@ -48,7 +48,6 @@
   padding-left: 10px;
   padding-right: 25px;
   max-width: 120vw;
-  margin-bottom: 15px;
 }
 
 .userId {
@@ -125,6 +124,7 @@
   width: 80vw;
   font-size: 28px;
   letter-spacing: 3px;
+  padding-top: 8px;
 }
 
 .loginBtn:hover {
@@ -165,6 +165,7 @@
   width: 80vw;
   font-size: 28px;
   letter-spacing: 3px;
+  padding-top: 8px;
 }
 
 .singUpBtn:hover {
