@@ -21,7 +21,7 @@ const MakeTodo = ({ datas, setDatas, userInfo }) => {
   // const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
   const addTodoClick = (event) => {
     axios
-      .post('https://localhost:4000/todos', {
+      .post(`${process.env.REACT_APP_API_URL}/todos`, {
         userId: userInfo.userId,
         todo: message,
         d_day: startDate

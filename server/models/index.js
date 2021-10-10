@@ -12,7 +12,18 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
+    port: 80,
+    logging: console.log,
+    maxConcurrentQueries: 100,
+    dialect: 'mysql',
+    dialectOptions: {
+        ssl:'Amazon RDS'
+    },
+    pool: { maxConnections: 5, maxIdleTime: 30},
+    language: 'en'
+  })
 }
 
 fs

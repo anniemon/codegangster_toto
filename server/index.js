@@ -32,7 +32,7 @@ app.post('/signup', controllers.signup);
 app.post('/login', controllers.login);
 app.get('/logout', controllers.logout);
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 80;
+const HTTPS_PORT = 80;
 
 let server;
 // if (fs.existsSync('./key.pem') && fs.existsSync('./cert.pem')) {
