@@ -14,8 +14,7 @@ function App() {
 
   const issueTokens = (token) => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/tokenRequest`, 
-      {
+      .get(`${process.env.REACT_APP_API_URL}/tokenRequest`, {
         headers: { authorization: `Bearer ${token}` },
         withCredentials: true
       })
@@ -25,7 +24,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
-  
+
   useEffect(() => {
     issueTokens();
   }, []);
