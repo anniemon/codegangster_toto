@@ -14,7 +14,8 @@ function App() {
 
   const issueTokens = (token) => {
     axios
-      .get('https://localhost:4000/tokenrequest', {
+      .get(`${process.env.REACT_APP_API_URL}/tokenRequest`, 
+      {
         headers: { authorization: `Bearer ${token}` },
         withCredentials: true
       })
@@ -24,6 +25,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
+  
   useEffect(() => {
     issueTokens();
   }, []);
@@ -34,7 +36,7 @@ function App() {
 
   const logoutHandler = () => {
     axios
-      .get('https://localhost:4000/logout', { withCredentials: true })
+      .get(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
       .then((res) => {
         setUserInfo({});
         setIsLogin(false);

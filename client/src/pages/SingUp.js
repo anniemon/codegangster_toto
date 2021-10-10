@@ -23,7 +23,7 @@ const SingUp = () => {
 
   const onSubmit = (data) => {
     axios
-      .post('https://localhost:4000/signup', {
+      .post(`${process.env.REACT_APP_API_URL}/signup`, {
         userId: data.userId,
         password: data.password,
         email: data.email

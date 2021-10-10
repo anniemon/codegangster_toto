@@ -24,7 +24,7 @@ const Login = ({ loginHandler }) => {
   const userLogin = () => {
     axios
       .post(
-        'https://localhost:4000/login',
+        `${process.env.REACT_APP_API_URL}/login`,
         { userId: userId, password: password },
         { withCredentials: true }
       )
