@@ -22,7 +22,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 // app.get('/accesstokenrequest', controllers.accessTokenRequest);
 // app.get('/refreshtokenrequest', controllers.refreshTokenRequest);
 app.get('/tokenRequest', controllers.tokenRequest);
