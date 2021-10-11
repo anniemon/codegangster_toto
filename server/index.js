@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.get('/accesstokenrequest', controllers.accessTokenRequest);
 // app.get('/refreshtokenrequest', controllers.refreshTokenRequest);
-app.get('/tokenrequest', controllers.tokenRequest);
+app.get('/tokenRequest', controllers.tokenRequest);
 
 app.post('/getTodos', controllers.todo.get);
 app.post('/todos', controllers.todo.post);
@@ -32,7 +32,7 @@ app.post('/signup', controllers.signup);
 app.post('/login', controllers.login);
 app.get('/logout', controllers.logout);
 
-const HTTPS_PORT = 80;
+const HTTPS_PORT = 443;
 
 let server;
 // if (fs.existsSync('./key.pem') && fs.existsSync('./cert.pem')) {

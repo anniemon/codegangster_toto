@@ -26,7 +26,7 @@ module.exports = (req, res) => {
   User.findOne({ where: { userId } })
     .then((data) => {
       if (!data) {
-        return res.redirect('http://localhost:4000/login');
+        return res.redirect(`${process.env.REACT_APP_API_URL}/login`);
       }
       delete data.dataValues.password;
 
