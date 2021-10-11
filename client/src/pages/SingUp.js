@@ -36,7 +36,7 @@ const SingUp = () => {
 
   useEffect(() => {
     setIsVerified(watch('verifyPassword') === watch('password'));
-  }, [watch('verifyPassword'),  watch('password')]);
+  }, [watch('verifyPassword'), watch('password')]);
 
   return (
     <section className="loginTodolist__container">
@@ -114,34 +114,22 @@ const SingUp = () => {
           </div>
 
           {errors.userId && (
-            <div
-              name="userId_err"
-              className="validation__check__msg"
-            >
+            <div name="userId_err" className="validation__check__msg">
               * 아이디는 소문자, 숫자 4~20글자여야 합니다.
             </div>
           )}
           {errors.email && (
-            <div
-              name="email_err"
-              className="validation__check__msg"
-            >
+            <div name="email_err" className="validation__check__msg">
               * 올바른 형식의 이메일을 입력해 주세요.
             </div>
           )}
           {errors.password && (
-            <div
-              name="password_err"
-              className="validation__check__msg"
-            >
+            <div name="password_err" className="validation__check__msg">
               * 비밀번호는 8글자 이상, 영문, 숫자 조합이어야 합니다.
             </div>
           )}
           {!isVerified ? (
-            <div
-              name="passwordNotMatch_err"
-              className="validation__check__msg"
-            >
+            <div name="passwordNotMatch_err" className="validation__check__msg">
               * 비밀번호가 일치하지 않습니다.
             </div>
           ) : (

@@ -3,10 +3,10 @@ dotenv.config();
 
 module.exports = {
   development: {
-    username: 'root',
+    username: 'admin',
     password: process.env.DATABASE_PASSWORD,
     database: 'todolist',
-    host: '127.0.0.1',
+    host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
     dialect: 'mysql'
   },
   test: {
