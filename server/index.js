@@ -11,7 +11,6 @@ const { sequelize } = require('./models');
 const app = express();
 
 //추가
-dotenv.config();
 sequelize.sync();
 
 app.use(
