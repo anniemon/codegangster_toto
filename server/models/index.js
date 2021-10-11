@@ -14,7 +14,7 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
-    port: 443,
+    port: 13306,
     logging: console.log,
     dialect: 'mysql',
     dialectOptions: {
