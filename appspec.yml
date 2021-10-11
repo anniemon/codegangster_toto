@@ -14,5 +14,3 @@ hooks:
   ApplicationStart:
     - location: scripts/start.sh
       runas: root
-  BeforeInstall:
-    -location: scripts/beforeInstall.sh
