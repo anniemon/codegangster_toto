@@ -7,7 +7,7 @@ module.exports = {
     password: process.env.DATABASE_PASSWORD,
     database: 'todolist',
     host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
-    port: 13306,
+    port: '13306',
     dialect: 'mysql'
   },
   test: {
