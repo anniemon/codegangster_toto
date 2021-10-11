@@ -2,8 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import './MakeTodo.css';
 // import ContentTodo from "./ContentTodo";
-// import dummyTodos from "../static/dummyData";
-import shortid from 'shortid';
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ko from 'date-fns/locale/ko';

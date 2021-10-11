@@ -29,7 +29,11 @@ const Login = ({ loginHandler }) => {
         { withCredentials: true }
       )
       .then((res) => loginHandler(res.data))
-      .catch((err) => alert('ID와 Password를 확인해 주세요!'));
+      .catch((err) => {
+        if(err.response.status === 401) {
+          alert('ID와 Password를 확인해 주세요!')
+        }
+      });
   };
 
   return (
