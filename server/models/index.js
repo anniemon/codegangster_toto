@@ -14,9 +14,8 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
-    port: 80,
+    port: 80, // 443 //settings.database.host?
     logging: console.log,
-    maxConcurrentQueries: 100,
     dialect: 'mysql',
     dialectOptions: {
         ssl:'Amazon RDS'
