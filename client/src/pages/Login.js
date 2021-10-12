@@ -35,16 +35,20 @@ const Login = ({ loginHandler }) => {
   return (
     <section className="loginTodolist__container">
       <div className="loginTodolist__logo">Code Gangsters TodoList</div>
-      <div className="loginTodolist__inputField">
-        <div className="loginTodolist__inputId">
-          <i class="fas fa-user"></i>
-          <input className="userId" type="text" onChange={handleChange} />
-        </div>
-        <div className="loginTodolist__inputPassword">
-          <i class="fas fa-unlock-alt"></i>
-          <input className="password" type="password" onChange={handleChange} />
-        </div>
-        <form onSubmit={userLogin} method="POST">
+      <form onSubmit={userLogin} method="POST">
+        <div className="loginTodolist__inputField">
+          <div className="loginTodolist__inputId">
+            <i class="fas fa-user"></i>
+            <input className="userId" type="text" onChange={handleChange} />
+          </div>
+          <div className="loginTodolist__inputPassword">
+            <i class="fas fa-unlock-alt"></i>
+            <input
+              className="password"
+              type="password"
+              onChange={handleChange}
+            />
+          </div>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <div className="loginTodolist__BtnContainer">
               <button type="submit" className="loginBtn" onClick={userLogin}>
@@ -57,8 +61,8 @@ const Login = ({ loginHandler }) => {
               <button className="singUpBtn">Sign Up</button>
             </div>
           </Link>
-        </form>
-      </div>
+        </div>
+      </form>
       <div className="footer">
         <Footer />
       </div>
