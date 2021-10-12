@@ -44,18 +44,20 @@ const Login = ({ loginHandler }) => {
           <i class="fas fa-unlock-alt"></i>
           <input className="password" type="password" onChange={handleChange} />
         </div>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <div className="loginTodolist__BtnContainer">
-            <button type="submit" className="loginBtn" onClick={userLogin}>
-              Login
-            </button>
-          </div>
-        </Link>
-        <Link to="/signup" style={{ textDecoration: 'none' }}>
-          <div className="loginTodolist__BtnContainer">
-            <button className="singUpBtn">Sign Up</button>
-          </div>
-        </Link>
+        <form onSubmit={userLogin} method="POST">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <div className="loginTodolist__BtnContainer">
+              <button type="submit" className="loginBtn" onClick={userLogin}>
+                Login
+              </button>
+            </div>
+          </Link>
+          <Link to="/signup" style={{ textDecoration: 'none' }}>
+            <div className="loginTodolist__BtnContainer">
+              <button className="singUpBtn">Sign Up</button>
+            </div>
+          </Link>
+        </form>
       </div>
       <div className="footer">
         <Footer />
