@@ -13,7 +13,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
-    host: 'codegangster-todolist.c4tretnl6cyc.ap-northeast-2.rds.amazonaws.com',
+    host: 'todolist.c4hbjbnc7fir.ap-northeast-2.rds.amazonaws.com',
     port: 13306,
     logging: console.log,
     dialect: 'mysql',
